@@ -12,6 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application using Gradle wrapper...'
+                sh 'echo $JAVA_HOME'
+                sh 'java -version'
                 sh './gradlew clean build'
             }
         }
